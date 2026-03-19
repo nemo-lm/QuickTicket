@@ -7,6 +7,12 @@
    // Load and display the recently viewed tickets
    loadRecentlyViewed();
 
+   document.getElementById('ticketId').addEventListener('keydown', (e) => {
+     if (e.key === 'Enter') {
+       document.getElementById('goButton').click();
+     }
+   });
+
    document.getElementById('goButton').addEventListener('click', () => {
      const ticketId = document.getElementById('ticketId').value.trim();
      if (ticketId && /^[A-Za-z0-9-]+$/.test(ticketId)) {
